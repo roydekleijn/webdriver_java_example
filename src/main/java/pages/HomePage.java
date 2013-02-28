@@ -31,4 +31,9 @@ public class HomePage {
 		signinLink.click();
 		return new SignInPage(driver);
 	}
+
+	public HomePage init() {
+		driver.get("http://www.etsy.com");
+		return this;
+	}
 }
