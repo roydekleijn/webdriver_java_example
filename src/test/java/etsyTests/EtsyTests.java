@@ -88,11 +88,11 @@ public class EtsyTests {
 	public void exampleUsingFactory() {
 		Factory pages = new Factory(driver);
 		pages.homePage()
-					.init()
-					.clickSigninLink()
-						.setUsername("Test")
-						.setPassword("Case")
-						.submitForm();
+			.init()
+			.clickSigninLink()
+				.setUsername("Test")
+				.setPassword("Case")
+				.submitForm();
 	}
 
 }
