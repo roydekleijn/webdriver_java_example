@@ -72,8 +72,12 @@ public class EtsyTests {
 	@Test
 	public void exampleUsingMethodChaining() {
 		HomePage homePage = new HomePage(driver);
-		homePage.init().clickSigninLink().setUsername("Test")
-				.setPassword("Case").submitForm();
+		homePage
+			.init()
+			.clickSigninLink()
+				.setUsername("Test")
+				.setPassword("Case")
+				.submitForm();
 	}
 
 	/**
@@ -83,8 +87,12 @@ public class EtsyTests {
 	@Test
 	public void exampleUsingFactory() {
 		Factory pages = new Factory(driver);
-		pages.homePage().init().clickSigninLink().setUsername("Test")
-				.setPassword("Case").submitForm();
+		pages.homePage()
+					.init()
+					.clickSigninLink()
+						.setUsername("Test")
+						.setPassword("Case")
+						.submitForm();
 	}
 
 }
