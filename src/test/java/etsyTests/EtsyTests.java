@@ -1,5 +1,11 @@
 package etsyTests;
 
+import org.hamcrest.Matchers;
+
+import org.hamcrest.MatcherAssert;
+
+import org.testng.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -78,6 +84,8 @@ public class EtsyTests {
 				.setUsername("Test")
 				.setPassword("Case")
 				.submitForm();
+		
+		MatcherAssert.assertThat(true, Matchers.equalTo(false));
 	}
 
 	/**
