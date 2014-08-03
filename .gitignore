@@ -2,6 +2,8 @@
 .settings/
 .classpath
 target/
+logs/
+bin
 test-output
 doc
 chromedriver.log
