@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Test
+@Test(groups = { "all" })
 @Listeners({ ScreenshotListener.class })
 public class LoginUsingTestBaseTest extends TestBase {
 

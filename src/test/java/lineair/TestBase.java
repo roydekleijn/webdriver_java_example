@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 public class TestBase {
 	protected WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Firefox driver
 		driver = new FirefoxDriver();
@@ -17,9 +17,9 @@ public class TestBase {
 		driver.get("http://selenium.polteq.com/testshop/index.php");
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		// Close the browser
-		driver.quit();
+		// driver.quit();
 	}
 }

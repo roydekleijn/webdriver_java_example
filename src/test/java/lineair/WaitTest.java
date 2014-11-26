@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 import com.google.common.base.Function;
 
-@Test
+@Test(groups = { "all" })
 public class WaitTest {
 
 	public void orderProductWithoutWait() {

@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-@Test
+@Test(groups = { "all" })
 public class LoginReportingTest {
 
 	public void login() {

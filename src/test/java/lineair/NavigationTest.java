@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-@Test
+@Test(groups = { "all" })
 public class NavigationTest {
 
 	public void navigateToPage() {

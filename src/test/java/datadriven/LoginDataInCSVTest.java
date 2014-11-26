@@ -8,29 +8,30 @@ import lineair.TestBase;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import pages.HomePage;
-import pages.MyAccountPage;
+import pages2.HomePage;
+import pages2.MyAccountPage;
 import au.com.bytecode.opencsv.CSVReader;
 
-@Test
+@Test(groups = { "all" })
 public class LoginDataInCSVTest extends TestBase {
 	
 	@DataProvider
 	public Iterator<String[]> loginAccounts() throws IOException {
-        boolean header = false;
-        CSVReader reader = new CSVReader(
-				new FileReader("src/test/resources/accounts.csv"));
-        Iterator<String[]> it = reader.readAll().iterator();
-        reader.close();
-        if (header == true) {
-            it.next();
-            it.remove();
-        }
-        return it;
-}
+		boolean header = false;
+		CSVReader reader = new CSVReader(new FileReader(
+				"src/test/resources/accounts.csv"));
+		Iterator<String[]> it = reader.readAll().iterator();
+		reader.close();
+		if (header == true) {
+			it.next();
+			it.remove();
+		}
+		return it;
+	}
 
 	@Test(dataProvider = "loginAccounts")
 	public void loginSuccess(String email, String password) {

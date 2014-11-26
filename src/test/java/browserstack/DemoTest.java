@@ -16,16 +16,17 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class DemoTest extends TestBase {
+public class DemoTest {
 	private WebDriver driver;
 
 	@BeforeClass(alwaysRun = true)
-	@Parameters({ "bsname", "bskey" })
-	public void setUp(@Optional("") String bsname, @Optional("") String bskey)
+	public void setUp()
 			throws MalformedURLException {
+		String bsname = "roydekleijn1";
+		String bskey = "zQS2TTf8esQxq1j96oKD";
 		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability("browser", "IE");
-		caps.setCapability("browser_version", "11.0");
+		caps.setCapability("browser", "firefox");
+		caps.setCapability("browser_version", "31.0");
 		caps.setCapability("os", "Windows");
 		caps.setCapability("os_version", "7");
 		caps.setCapability("browserstack.debug", "true");
