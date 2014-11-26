@@ -75,7 +75,7 @@ public class WaitTest {
 		driver.get("http://selenium.polteq.com/testshop/index.php");
 
 		// Set implicitly wait
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 
 		// Click on a product
 		driver.findElements(By.cssSelector("a.product_image")).get(1).click();
@@ -110,7 +110,7 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Wait for text to be present
-		WebDriverWait wait = new WebDriverWait(driver, 25, 100);
+		WebDriverWait wait = new WebDriverWait(driver, 45, 100);
 		wait.until(ExpectedConditions.textToBePresentInElement(driver
 				.findElement(By.cssSelector("a > span.ajax_cart_quantity")),
 				"1"));
@@ -143,19 +143,17 @@ public class WaitTest {
 
 		// Wait for element
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(30, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
-				.ignoring(NoSuchElementException.class);
+				.withTimeout(45, TimeUnit.SECONDS).pollingEvery(5,
+						TimeUnit.SECONDS);
 
-		WebElement quantity = wait.until(new Function<WebDriver, WebElement>() {
-			public WebElement apply(WebDriver driver) {
-				return driver.findElement(By
-						.cssSelector("a > span.ajax_cart_quantity"));
-			}
-		});
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By
+				.cssSelector("a > span.ajax_cart_quantity"))));
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(quantity.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(
+				driver.findElement(
+						By.cssSelector("a > span.ajax_cart_quantity"))
+						.getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();
