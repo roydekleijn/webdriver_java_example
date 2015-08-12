@@ -32,8 +32,8 @@ public class Demo {
 		capabilities.setCapability(CapabilityType.PROXY, proxy);
 		// capabilities.setCapability(CapabilityType.PROXY, proxy);
 
-		final String bsname = "roydekleijn1";
-		final String bskey = "zQS2TTf8esQxq1j96oKD";
+		final String bsname = "xxx";
+		final String bskey = "xxx";
 		capabilities.setCapability("browser", "firefox");
 		capabilities.setCapability("browser_version", "31.0");
 		capabilities.setCapability("os", "Windows");
