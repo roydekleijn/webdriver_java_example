@@ -19,8 +19,8 @@ public class LoginDataInCodeTest extends TestBase {
 	}
 
 	@Test(dataProvider = "loginAccounts")
-	public void loginSuccess(String email, String password) {
-		MyAccountPage accountPage = new HomePage(driver).get().clickOnLogin().loginWith(email, password);
+	public void loginSuccess(final String email, final String password) {
+		final MyAccountPage accountPage = new HomePage(this.driver).get().clickOnLogin().loginWith(email, password);
 		MatcherAssert.assertThat(accountPage.getWelcomeMessage(),
 				Matchers.equalTo("Welcome to your account. Here you can manage all of your personal information and orders."));
 	}

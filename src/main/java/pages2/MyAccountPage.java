@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 
-	private WebDriver driver;
+	private final WebDriver driver;
 
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
@@ -17,7 +17,7 @@ public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 	@FindBy(css = "div#center_column > p")
 	private WebElement welcomeMessage;
 
-	public MyAccountPage(WebDriver driver) {
+	public MyAccountPage(final WebDriver driver) {
 		this.driver = driver;
 
 		// This call sets the WebElement fields.
@@ -27,18 +27,18 @@ public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 	@Override
 	protected void load() {
 		// Open the page
-		driver.get("http://selenium.polteq.com/testshop/index.php?controller=my-account");
+		this.driver.get("http://selenium.polteq.com/testshop/index.php?controller=my-account");
 	}
 
 	@Override
 	protected void isLoaded() throws Error {
 		// verify if the correct page is open
-		String url = driver.getCurrentUrl();
+		final String url = this.driver.getCurrentUrl();
 		Assert.assertTrue(url.endsWith("?controller=my-account"));
 	}
 
 	public String getWelcomeMessage() {
-		return welcomeMessage.getText();
+		return this.welcomeMessage.getText();
 	}
 
 }

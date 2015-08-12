@@ -12,7 +12,7 @@ public class LoginTest {
 
 	public void login() {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");

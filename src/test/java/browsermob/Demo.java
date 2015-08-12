@@ -15,18 +15,18 @@ public class Demo {
 	@Test
 	public void bmtest() throws Exception {
 		// start the proxy
-		ProxyServer server = new ProxyServer(4444);
+		final ProxyServer server = new ProxyServer(4444);
 		server.start();
 
 		// get the Selenium proxy object
-		Proxy proxy = server.seleniumProxy();
+		final Proxy proxy = server.seleniumProxy();
 
 		// configure it as a desired capability
-		DesiredCapabilities capabilities = new DesiredCapabilities();
+		final DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(CapabilityType.PROXY, proxy);
 
 		// start the browser up
-		WebDriver driver = new FirefoxDriver(capabilities);
+		final WebDriver driver = new FirefoxDriver(capabilities);
 
 		// create a new HAR with the label "yahoo.com"
 		server.newHar("yahoo.com");
@@ -35,7 +35,7 @@ public class Demo {
 		driver.get("http://selenium.polteq.com");
 
 		// get the HAR data
-		Har har = server.getHar();
+		final Har har = server.getHar();
 		System.out.println(har.getLog().getEntries().size());
 	}
 }

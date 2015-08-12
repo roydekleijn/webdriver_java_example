@@ -11,10 +11,10 @@ public class TestBase {
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() {
 		// Create a new instance of the Firefox driver
-		driver = new FirefoxDriver();
+		this.driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		this.driver.get("http://selenium.polteq.com/testshop/index.php");
 	}
 
 	@AfterMethod(alwaysRun = true)

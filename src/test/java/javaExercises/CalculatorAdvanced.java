@@ -6,14 +6,14 @@ public class CalculatorAdvanced {
 
 	@Test
 	public void calcTest() {
-		System.out.println(calculate(Operator.MULTIPLY, 10, 7));
+		System.out.println(this.calculate(Operator.MULTIPLY, 10, 7));
 	}
 
 	public enum Operator {
 		ADD, SUBSTRACT, MULTIPLY, DIVIDE
 	}
 
-	private int calculate(Operator operator, int a, int b) {
+	private int calculate(final Operator operator, final int a, final int b) {
 		int result = 0;
 		if (operator.equals(Operator.ADD)) {
 			result = a + b;

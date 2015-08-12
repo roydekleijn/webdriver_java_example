@@ -17,7 +17,7 @@ public class WaitTest {
 
 	public void orderProductWithoutWait() {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");
@@ -37,7 +37,7 @@ public class WaitTest {
 
 	public void orderProductWithBadWait() throws InterruptedException {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");
@@ -60,7 +60,7 @@ public class WaitTest {
 
 	public void orderProductWithImplicitlyWait() {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");
@@ -83,7 +83,7 @@ public class WaitTest {
 
 	public void orderProductWithExpectedCondition() {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");
@@ -98,7 +98,7 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Wait for text to be present
-		WebDriverWait wait = new WebDriverWait(driver, 45, 100);
+		final WebDriverWait wait = new WebDriverWait(driver, 45, 100);
 		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")), "1"));
 
 		// Verify product is in cart
@@ -110,7 +110,7 @@ public class WaitTest {
 
 	public void orderProductWithFluentWait() {
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
+		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
 		driver.get("http://selenium.polteq.com/testshop/index.php");
@@ -125,7 +125,7 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Wait for element
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(45, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS);
+		final FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(45, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS);
 
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity"))));
 

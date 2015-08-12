@@ -23,24 +23,24 @@ public class Demo {
 		// Proxy proxy = server.seleniumProxy();
 
 		// configure it as a desired capability
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		BrowserMobProxyClient bmc = new BrowserMobProxyClient("http://94.211.27.20", 9090);
-		int port = bmc.getPort();
+		final DesiredCapabilities capabilities = new DesiredCapabilities();
+		final BrowserMobProxyClient bmc = new BrowserMobProxyClient("http://94.211.27.20", 9090);
+		final int port = bmc.getPort();
 		bmc.setPort(port);
-		Proxy proxy = new Proxy();
+		final Proxy proxy = new Proxy();
 		proxy.setHttpProxy("94.211.27.20:" + port);
 		capabilities.setCapability(CapabilityType.PROXY, proxy);
 		// capabilities.setCapability(CapabilityType.PROXY, proxy);
 
-		String bsname = "roydekleijn1";
-		String bskey = "zQS2TTf8esQxq1j96oKD";
+		final String bsname = "roydekleijn1";
+		final String bskey = "zQS2TTf8esQxq1j96oKD";
 		capabilities.setCapability("browser", "firefox");
 		capabilities.setCapability("browser_version", "31.0");
 		capabilities.setCapability("os", "Windows");
 		capabilities.setCapability("os_version", "7");
 		capabilities.setCapability("browserstack.debug", "true");
 
-		WebDriver driver = new RemoteWebDriver(new URL("http://" + bsname + ":" + bskey + "@hub.browserstack.com/wd/hub"), capabilities);
+		final WebDriver driver = new RemoteWebDriver(new URL("http://" + bsname + ":" + bskey + "@hub.browserstack.com/wd/hub"), capabilities);
 
 		// driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.MINUTES);
 
@@ -56,7 +56,7 @@ public class Demo {
 		bmc.waitForNetworkTrafficToStop(5000, 45000);
 
 		// get the HAR data
-		Har har = bmc.getHar();
+		final Har har = bmc.getHar();
 		System.out.println(har.getLog().getEntries().size());
 	}
 }

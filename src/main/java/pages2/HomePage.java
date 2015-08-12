@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
 public class HomePage extends LoadableComponent<HomePage> {
-	private WebDriver driver;
+	private final WebDriver driver;
 
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
 
-	public HomePage(WebDriver driver) {
+	public HomePage(final WebDriver driver) {
 		this.driver = driver;
 
 		// This call sets the WebElement fields.
@@ -23,19 +23,19 @@ public class HomePage extends LoadableComponent<HomePage> {
 	@Override
 	protected void load() {
 		// Open the page
-		driver.get("http://selenium.polteq.com/index.php");
+		this.driver.get("http://selenium.polteq.com/index.php");
 	}
 
 	@Override
 	protected void isLoaded() throws Error {
 		// verify if the correct page is open
-		String url = driver.getCurrentUrl();
+		final String url = this.driver.getCurrentUrl();
 		Assert.assertTrue(url.endsWith("/index.php"));
 	}
 
 	public AuthenticationPage clickOnLogin() {
-		loginLink.click();
-		return new AuthenticationPage(driver);
+		this.loginLink.click();
+		return new AuthenticationPage(this.driver);
 	}
 
 }

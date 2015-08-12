@@ -8,29 +8,29 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
 public class HomePage extends LoadableComponent<HomePage> {
-	private WebDriver driver;
+	private final WebDriver driver;
 
 	@FindBy(css = ".login")
 	private WebElement loginLink;
 
 	@Override
 	protected void load() {
-		driver.get("http://selenium.polteq.com/testshop/");
+		this.driver.get("http://selenium.polteq.com/testshop/");
 	}
 
 	@Override
 	protected void isLoaded() throws Error {
-		String url = driver.getCurrentUrl();
+		final String url = this.driver.getCurrentUrl();
 		Assert.assertTrue(url.equals("http://selenium.polteq.com/testshop/index.php"));
 	}
 
-	public HomePage(WebDriver driver) {
+	public HomePage(final WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	public void clickOnLoginLink() {
-		loginLink.click();
+		this.loginLink.click();
 	}
 
 }
