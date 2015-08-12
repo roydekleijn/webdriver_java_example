@@ -13,7 +13,7 @@ public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
-	
+
 	@FindBy(css = "div#center_column > p")
 	private WebElement welcomeMessage;
 
@@ -36,7 +36,7 @@ public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 		String url = driver.getCurrentUrl();
 		Assert.assertTrue(url.endsWith("?controller=my-account"));
 	}
-	
+
 	public String getWelcomeMessage() {
 		return welcomeMessage.getText();
 	}

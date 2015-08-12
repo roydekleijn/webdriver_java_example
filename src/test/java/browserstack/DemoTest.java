@@ -3,8 +3,6 @@ package browserstack;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import lineair.TestBase;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,16 +10,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class DemoTest {
 	private WebDriver driver;
 
 	@BeforeClass(alwaysRun = true)
-	public void setUp()
-			throws MalformedURLException {
+	public void setUp() throws MalformedURLException {
 		String bsname = "roydekleijn1";
 		String bskey = "zQS2TTf8esQxq1j96oKD";
 		DesiredCapabilities caps = new DesiredCapabilities();
@@ -31,8 +26,7 @@ public class DemoTest {
 		caps.setCapability("os_version", "7");
 		caps.setCapability("browserstack.debug", "true");
 
-		driver = new RemoteWebDriver(new URL("http://" + bsname + ":" + bskey
-				+ "@hub.browserstack.com/wd/hub"), caps);
+		driver = new RemoteWebDriver(new URL("http://" + bsname + ":" + bskey + "@hub.browserstack.com/wd/hub"), caps);
 	}
 
 	@AfterClass(alwaysRun = true)

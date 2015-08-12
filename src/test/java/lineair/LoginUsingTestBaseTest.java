@@ -15,8 +15,7 @@ public class LoginUsingTestBaseTest extends TestBase {
 		driver.findElement(By.cssSelector("a.login")).click();
 
 		// Enter username
-		driver.findElement(By.cssSelector("input#email")).sendKeys(
-				"tester@test.com");
+		driver.findElement(By.cssSelector("input#email")).sendKeys("tester@test.com");
 
 		// Enter password
 		driver.findElement(By.cssSelector("input#passwd")).sendKeys("1qaxx");
@@ -25,7 +24,6 @@ public class LoginUsingTestBaseTest extends TestBase {
 		driver.findElement(By.cssSelector("input#SubmitLogin")).click();
 
 		// Verify if the logout link is displayed
-		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a.logout"))
-				.isDisplayed(), Matchers.equalTo(true));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a.logout")).isDisplayed(), Matchers.equalTo(true));
 	}
 }

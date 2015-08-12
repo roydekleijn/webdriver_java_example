@@ -5,16 +5,12 @@ import java.util.concurrent.TimeUnit;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import com.google.common.base.Function;
 
 @Test(groups = { "all" })
 public class WaitTest {
@@ -33,9 +29,7 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(
-				driver.findElement(By.cssSelector("span.ajax_cart_quantity"))
-						.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("span.ajax_cart_quantity")).getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();
@@ -58,10 +52,7 @@ public class WaitTest {
 		Thread.sleep(15000);
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(
-				driver.findElement(
-						By.cssSelector("a > span.ajax_cart_quantity"))
-						.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")).getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();
@@ -84,10 +75,7 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(
-				driver.findElement(
-						By.cssSelector("a > span.ajax_cart_quantity"))
-						.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")).getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();
@@ -111,15 +99,10 @@ public class WaitTest {
 
 		// Wait for text to be present
 		WebDriverWait wait = new WebDriverWait(driver, 45, 100);
-		wait.until(ExpectedConditions.textToBePresentInElement(driver
-				.findElement(By.cssSelector("a > span.ajax_cart_quantity")),
-				"1"));
+		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")), "1"));
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(
-				driver.findElement(
-						By.cssSelector("a > span.ajax_cart_quantity"))
-						.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")).getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();
@@ -142,18 +125,12 @@ public class WaitTest {
 		driver.findElement(By.cssSelector("p#add_to_cart > input")).click();
 
 		// Wait for element
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(45, TimeUnit.SECONDS).pollingEvery(5,
-						TimeUnit.SECONDS);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(45, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS);
 
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By
-				.cssSelector("a > span.ajax_cart_quantity"))));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity"))));
 
 		// Verify product is in cart
-		MatcherAssert.assertThat(
-				driver.findElement(
-						By.cssSelector("a > span.ajax_cart_quantity"))
-						.getText(), Matchers.equalTo("1"));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a > span.ajax_cart_quantity")).getText(), Matchers.equalTo("1"));
 
 		// Close the browser
 		driver.quit();

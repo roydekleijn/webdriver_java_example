@@ -9,16 +9,16 @@ import org.testng.Assert;
 
 public class HomePage extends LoadableComponent<HomePage> {
 	private WebDriver driver;
-	
+
 	@FindBy(css = "a.login")
 	private WebElement loginLink;
-	
+
 	public HomePage(WebDriver driver) {
-	    this.driver = driver;
-	    
-	    // This call sets the WebElement fields.
-	    PageFactory.initElements(driver, this);
-	  }
+		this.driver = driver;
+
+		// This call sets the WebElement fields.
+		PageFactory.initElements(driver, this);
+	}
 
 	@Override
 	protected void load() {
@@ -32,7 +32,7 @@ public class HomePage extends LoadableComponent<HomePage> {
 		String url = driver.getCurrentUrl();
 		Assert.assertTrue(url.endsWith("/index.php"));
 	}
-	
+
 	public AuthenticationPage clickOnLogin() {
 		loginLink.click();
 		return new AuthenticationPage(driver);

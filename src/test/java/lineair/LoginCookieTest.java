@@ -21,8 +21,7 @@ public class LoginCookieTest {
 		driver.findElement(By.cssSelector("a.login")).click();
 
 		// Enter username
-		driver.findElement(By.cssSelector("input#email")).sendKeys(
-				"tester@test.com");
+		driver.findElement(By.cssSelector("input#email")).sendKeys("tester@test.com");
 
 		// Or use one of the following
 		// driver.findElement(By.cssSelector("input[id=email]")).sendKeys("tester@test.com");
@@ -36,8 +35,7 @@ public class LoginCookieTest {
 		driver.findElement(By.cssSelector("input#SubmitLogin")).click();
 
 		// Verify if logout link is displayed
-		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a.logout"))
-				.isDisplayed(), Matchers.equalTo(true));
+		MatcherAssert.assertThat(driver.findElement(By.cssSelector("a.logout")).isDisplayed(), Matchers.equalTo(true));
 
 		// Delete cookies
 		driver.manage().deleteAllCookies();
@@ -46,9 +44,7 @@ public class LoginCookieTest {
 		driver.navigate().refresh();
 
 		// Verify if logout link is NOT displayed
-		MatcherAssert.assertThat(driver
-				.findElements(By.cssSelector("a.logout")).isEmpty(), Matchers
-				.equalTo(true));
+		MatcherAssert.assertThat(driver.findElements(By.cssSelector("a.logout")).isEmpty(), Matchers.equalTo(true));
 
 		// Close the browser
 		driver.quit();

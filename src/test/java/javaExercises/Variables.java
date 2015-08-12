@@ -9,7 +9,7 @@ public class Variables {
 		int i = 2;
 		float f = 12.5f;
 		String text = "Training selenium WebDriver";
-		
+
 		System.out.println(i);
 		System.out.println(f);
 		System.out.println(text);

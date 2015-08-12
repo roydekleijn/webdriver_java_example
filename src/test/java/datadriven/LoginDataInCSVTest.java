@@ -8,7 +8,6 @@ import lineair.TestBase;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -18,12 +17,11 @@ import au.com.bytecode.opencsv.CSVReader;
 
 @Test(groups = { "all" })
 public class LoginDataInCSVTest extends TestBase {
-	
+
 	@DataProvider
 	public Iterator<String[]> loginAccounts() throws IOException {
 		boolean header = false;
-		CSVReader reader = new CSVReader(new FileReader(
-				"src/test/resources/accounts.csv"));
+		CSVReader reader = new CSVReader(new FileReader("src/test/resources/accounts.csv"));
 		Iterator<String[]> it = reader.readAll().iterator();
 		reader.close();
 		if (header == true) {
@@ -35,9 +33,8 @@ public class LoginDataInCSVTest extends TestBase {
 
 	@Test(dataProvider = "loginAccounts")
 	public void loginSuccess(String email, String password) {
-		MyAccountPage accountPage = new HomePage(driver).get()
-			.clickOnLogin()
-			.loginWith(email, password);
-		MatcherAssert.assertThat(accountPage.getWelcomeMessage(), Matchers.equalTo("Welcome to your account. Here you can manage all of your personal information and orders."));
+		MyAccountPage accountPage = new HomePage(driver).get().clickOnLogin().loginWith(email, password);
+		MatcherAssert.assertThat(accountPage.getWelcomeMessage(),
+				Matchers.equalTo("Welcome to your account. Here you can manage all of your personal information and orders."));
 	}
 }

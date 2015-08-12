@@ -16,8 +16,7 @@ public class NavigationTest {
 		driver.get("http://selenium.polteq.com/testshop/index.php");
 
 		// Navigate to the contact page
-		driver.findElement(By.cssSelector("li#header_link_contact > a"))
-				.click();
+		driver.findElement(By.cssSelector("li#header_link_contact > a")).click();
 
 		// Go back to the homepage
 		driver.navigate().back();
