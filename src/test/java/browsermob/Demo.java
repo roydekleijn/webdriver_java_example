@@ -1,14 +1,14 @@
 package browsermob;
 
-import net.lightbody.bmp.core.har.Har;
-import net.lightbody.bmp.proxy.ProxyServer;
-
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
+
+import net.lightbody.bmp.core.har.Har;
+import net.lightbody.bmp.proxy.ProxyServer;
 
 public class Demo {
 
@@ -32,7 +32,7 @@ public class Demo {
 		server.newHar("yahoo.com");
 
 		// open yahoo.com
-		driver.get("http://selenium.polteq.com");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// get the HAR data
 		final Har har = server.getHar();

@@ -2,14 +2,14 @@ package bs_bm;
 
 import java.net.URL;
 
-import net.lightbody.bmp.core.har.Har;
-
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+
+import net.lightbody.bmp.core.har.Har;
 
 public class Demo {
 
@@ -52,7 +52,7 @@ public class Demo {
 		bmc.newHar("yahoo.com", false, true, false);
 
 		// open yahoo.com
-		driver.get("http://selenium.polteq.com");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 		bmc.waitForNetworkTrafficToStop(5000, 45000);
 
 		// get the HAR data

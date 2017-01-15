@@ -15,7 +15,7 @@ public class LoginTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Click on the login link
 		driver.findElement(By.cssSelector("a.login")).click();

@@ -14,12 +14,12 @@ public class TestBase {
 		this.driver = new FirefoxDriver();
 
 		// Open the website
-		this.driver.get("http://selenium.polteq.com/testshop/index.php");
+		this.driver.get("http://demo.rdekleijn.nl/index.php");
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		// Close the browser
-		// driver.quit();
+		driver.quit();
 	}
 }

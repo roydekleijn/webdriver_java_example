@@ -27,7 +27,7 @@ public class MyAccountPage extends LoadableComponent<MyAccountPage> {
 	@Override
 	protected void load() {
 		// Open the page
-		this.driver.get("http://selenium.polteq.com/testshop/index.php?controller=my-account");
+		this.driver.get("http://demo.rdekleijn.nl/index.php?controller=my-account");
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public class NavigationTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Navigate to the contact page
 		driver.findElement(By.cssSelector("li#header_link_contact > a")).click();
@@ -25,7 +25,7 @@ public class NavigationTest {
 		driver.navigate().forward();
 
 		// Go back to the homepage
-		driver.navigate().to("http://selenium.polteq.com/testshop/index.php");
+		driver.navigate().to("http://demo.rdekleijn.nl/index.php");
 
 		// Refresh the browser
 		driver.navigate().refresh();

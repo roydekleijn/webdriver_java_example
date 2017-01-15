@@ -17,7 +17,7 @@ public class LoginReportingTest {
 
 		// Open the website
 		Reporter.log("Open the website | ");
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Click on the login link
 		Reporter.log("Click on the login link | ");

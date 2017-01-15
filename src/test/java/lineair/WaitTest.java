@@ -20,7 +20,7 @@ public class WaitTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Click on a product
 		driver.findElements(By.cssSelector("a.product_image")).get(1).click();
@@ -40,7 +40,7 @@ public class WaitTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Click on a product
 		driver.findElements(By.cssSelector("a.product_image")).get(1).click();
@@ -63,7 +63,7 @@ public class WaitTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Set implicitly wait
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
@@ -86,7 +86,7 @@ public class WaitTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Set implicitly wait
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -113,7 +113,7 @@ public class WaitTest {
 		final WebDriver driver = new FirefoxDriver();
 
 		// Open the website
-		driver.get("http://selenium.polteq.com/testshop/index.php");
+		driver.get("http://demo.rdekleijn.nl/index.php");
 
 		// Set implicitly wait
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

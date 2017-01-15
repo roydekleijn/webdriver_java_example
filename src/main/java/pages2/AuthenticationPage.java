@@ -29,7 +29,7 @@ public class AuthenticationPage extends LoadableComponent<AuthenticationPage> {
 	@Override
 	protected void load() {
 		// Open the page
-		this.driver.get("http://selenium.polteq.com/index.php?controller=authentication&back=my-account");
+		this.driver.get("http://demo.rdekleijn.nl/index.php?controller=authentication&back=my-account");
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class HomePage extends LoadableComponent<HomePage> {
 	@Override
 	protected void load() {
 		// Open the page
-		this.driver.get("http://selenium.polteq.com/index.php");
+		this.driver.get("http://demo.rdekleijn.nl/index.php");
 	}
 
 	@Override

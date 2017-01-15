@@ -15,13 +15,13 @@ public class HomePage extends LoadableComponent<HomePage> {
 
 	@Override
 	protected void load() {
-		this.driver.get("http://selenium.polteq.com/testshop/");
+		this.driver.get("http://demo.rdekleijn.nl");
 	}
 
 	@Override
 	protected void isLoaded() throws Error {
 		final String url = this.driver.getCurrentUrl();
-		Assert.assertTrue(url.equals("http://selenium.polteq.com/testshop/index.php"));
+		Assert.assertTrue(url.equals("http://demo.rdekleijn.nl/index.php"));
 	}
 
 	public HomePage(final WebDriver driver) {
